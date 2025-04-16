@@ -1,0 +1,33 @@
+<div class="product-carousel">
+  <div class="product-grid">
+    {% for product in collections.essentials.products %}
+      <div class="product-card {% if forloop.index > 4 %}hidden{% endif %}">
+        <!-- Renderiza el producto -->
+        <a href="{{ product.url }}">
+          <img src="{{ product.featured_image | img_url: 'medium' }}" alt="{{ product.title }}">
+          <p>{{ product.title }}</p>
+          <p>{{ product.price | money }}</p>
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+
+  <button id="toggleProducts" class="view-all-btn">View All</button>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('toggleProducts');
+    let showingAll = false;
+
+    toggleBtn.addEventListener('click', () => {
+      const hiddenProducts = document.querySelectorAll('.product-card.hidden');
+
+      hiddenProducts.forEach(card => {
+        card.classList.toggle('hidden');
+      });
+
+      showingAll = !showingAll;
+      toggleBtn.textContent = showingAll ? 'View Less' : 'View All';
+    });
+  });
+</script>

@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "featured-products": {
+      "type": "featured-products",
+      "settings": {
+        "heading": "Our Featured Products",
+        "background_color": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "settings": {
+      "logo_image": "logo.svg",
+      "logo_alt": "Shuffle Store",
+      "logo_link": "https://gradiweb.com",
+      "crypto_span": "We Accept",
+      "crypto__icons": [
+        "bitcoin.svg",
+        "ethereum.svg",
+        "litecoin.svg",
+        "dogecoin.svg",
+        "usdc.svg"
+      ],
+      "nav_links": [
+        { "label": "All Products", "url": "/collections/all" },
+        { "label": "Collections", "url": "/collections" }
+      ],
+      "cart_enabled": true
+      }
+    },
+    "top-bar": {
+      "type": "top-bar",
+      "settings": {
+      "announcement_text": "💎 FREE SHIPPING FOR ORDERS OVER $100",
+      "background_color": "#6e28d9",
+      "text_color": "#ffffff"
+      }
+    },
+    "hero-banner": {
+      "type": "hero-banner",
+      "settings": {
+        "button_text": "VIEW THE COLLECTION",
+        "button_link": "/collections/all",
+        "marquee_text": [
+                          "⭐ SHUFFLE ESSENTIALS",
+                          "SHUFFLE ESSENTIALS",
+                          "NUEVA COLECCIÓN",
+                          "ENVÍO GRATIS",
+                          "SÓLO POR TIEMPO LIMITADO"
+                        ],
+        "background_image": "hero_banner_img.avif"
+      }
+    },
+    "footer": {
+      "type": "footer",
+      "settings": {
+        "logo_text": "MyShopify",
+        "links": [
+          { "label": "Home", "url": "/" },
+          { "label": "Cart", "url": "/cart" },
+          { "label": "All Products", "url": "/collections/all" },
+          { "label": "Collections", "url": "/collections" },
+          { "label": "Refund Policy", "url": "/refund-policy" },
+          { "label": "Privacy Policy", "url": "/privacy-policy" },
+          { "label": "Terms of Service", "url": "/terms-of-service" }
+        ]
+      }
+    }
+  }
+}

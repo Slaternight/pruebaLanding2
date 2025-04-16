@@ -1,0 +1,11 @@
+@import './top-bar.css';
+@import './hero-banner.css';
+@import './header.css';
+@import './featured-products.css';
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(24, 230, 68);
+  margin: 0;
+  padding: 0;
+}

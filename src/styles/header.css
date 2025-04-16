@@ -1,0 +1,62 @@
+.header {
+    background-color: #1A1A1A;
+    padding: 1rem 2rem;
+    color: white;
+  }
+  
+  .header__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header__logo {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: auto;
+    display: block;
+    
+  }
+  
+  
+  .header__crypto {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 2px solid #444;
+    padding: 0.5rem 2rem;
+    border-radius: 2rem;
+    background-color: #2C2C2C;
+  }
+  
+  .header__coins img {
+    width: 30px;
+    height: 30px;
+  }
+  .header__coins {
+    display: flex;
+   gap: 0.8rem;
+  }
+  
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .header__nav a {
+    color: white;
+    margin-right: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .header__cart {
+    background-color: #8B3DFF;
+    border: none;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }

@@ -1,0 +1,55 @@
+.announcement-bar {
+    background-color: #6e00ff;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 0.875rem;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .topbar-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .topbar-track {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
+    animation: topbar-marquee 20s linear infinite;
+  }
+
+  .topbar-track span {
+    display: inline-block;
+    padding: 0 2rem;
+  }
+
+  @keyframes topbar-marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+
+  .top-bar {
+  background-color: #8e2de2; /* morado vibrante */
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 6px 0;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+marquee {
+  white-space: nowrap;
+}

@@ -1,0 +1,23 @@
+{% assign hero = settings['hero-banner'].settings %}
+
+<section class="hero-banner" style="background-image: url('/assets/{{ hero.background_image }}')">
+  <div class="hero-banner__content">
+    <a href="{{ hero.button_link }}" class="hero-banner__button">
+      {{ hero.button_text }}
+    </a>
+  </div>
+
+
+</section>
+
+  <!-- Marquee -->
+  <div class="hero-marquee">
+    <div class="hero-track">
+     {% for i in (1..10) %}
+   {% for text in hero.marquee_text %}
+        <span>{{ text }}</span>
+      {% endfor %}
+{% endfor %}
+
+    </div>
+  </div>

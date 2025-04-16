@@ -1,0 +1,9 @@
+<section class="announcement-bar">
+  <div class="topbar-marquee">
+    <div class="topbar-track">
+      {% for i in (1..20) %}
+        <span>{{ settings['top-bar'].settings.announcement_text }}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
