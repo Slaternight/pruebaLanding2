@@ -1,92 +1,49 @@
 <div class="product-card">
   <div class="product-card__image-wrapper">
-<img src="assets/{{ product.image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image" />
+    <img class="product-card__image" src="assets/{{ product.image | img_url: 'medium' }}" alt="{{ product.title }}">
   </div>
-  <div class="product-description">
- 
-  <div class="product-info">
-  <h3 class="product-title">{{ product.title }}</h3>
-    <span class="product-price">${{ product.price | money_without_trailing_zeros }} USD</span>
-
-  </div>
-  <div class="product-info">
-     <button class="card__cart" aria-label="Cart">
-        🛒
-      </button>
-  </div> 
+  <div class="product-card__info">
+    <div class="namePrice">
+      <h3 class="product-card__title">{{ product.title }}</h3>
+      <p class="product-card__price">${{ product.price | money_without_trailing_zeros }}</p>
+    </div>
+    <button class="product-card__cart-button">
+      <img src="{{ 'cart-icon.svg' | asset_url }}" alt="Add to Cart">
+    </button>
   </div>
 </div>
 
-<style>
 
-.product-image {
-   border: 6px solid #8c52ff;
+  <style>
 
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 1rem;
-  border-radius: 6px;
-}
-
-.product-title {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.product-description{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.product-info {
-  display: inline-block;
-  justify-content: center;
-  align-items: center;
-  align-content: space-between;
-  
-  gap: 0.5rem;
-}
-
-.product-price {
-  font-weight: bold;
-}
-
-.card__cart{
-   background-color: #8B3DFF;
-    border: none;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
-
-
-
-
-.product-card {
-   border: 2px solid #8c52ff;
+  .product-card {
   border-radius: 12px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 500px;
+  max-width: 270px;
   transition: transform 0.3s ease;
-  padding: 20px;
-  margin: 80px;
-  height: 900px;
 }
 
 .product-card__image-wrapper {
+  display: flex;
   background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
+  border-radius: 12px;
+  justify-content: center;
+  border: 6px solid #8c52ff;
+  
 }
 
 .product-card__image {
+  border-radius: 6px;
   display: block;
-  object-fit: contain;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
 }
+
+
 
 .product-card__info {
   display: flex;
@@ -107,14 +64,20 @@
   margin-top: 4px;
 }
 
-.card__cart {
+.product-card__cart-button {
   background-color: #a259ff;
   border: none;
-  padding: 20px;
+  padding: 10px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-</style>
+
+.product-card__cart-button img {
+  width: 30px;
+  height: 30px;
+}
+
+  </style>
