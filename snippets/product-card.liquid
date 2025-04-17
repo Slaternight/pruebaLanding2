@@ -1,6 +1,7 @@
 <div class="product-card">
+  <div class="product-card__image-wrapper">
 <img src="assets/{{ product.image | img_url: 'medium' }}" alt="{{ product.title }}" class="product-image" />
-
+  </div>
   <div class="product-description">
  
   <div class="product-info">
@@ -19,7 +20,9 @@
 <style>
 
 .product-image {
-  width: 100%;
+   border: 6px solid #8c52ff;
+
+  max-width: 100%;
   height: auto;
   margin-bottom: 1rem;
   border-radius: 6px;
@@ -32,8 +35,8 @@
 
 .product-description{
   display: flex;
-  align-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .product-info {
@@ -62,14 +65,16 @@
 
 
 .product-card {
-
-  
+   border: 2px solid #8c52ff;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  max-width: 300px;
+  max-width: 500px;
   transition: transform 0.3s ease;
+  padding: 20px;
+  margin: 80px;
+  height: 900px;
 }
 
 .product-card__image-wrapper {
@@ -80,9 +85,7 @@
 
 .product-card__image {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .product-card__info {
@@ -104,21 +107,14 @@
   margin-top: 4px;
 }
 
-.product-card__cart-button {
+.card__cart {
   background-color: #a259ff;
   border: none;
-  padding: 10px;
+  padding: 20px;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
-.product-card__cart-button img {
-  width: 20px;
-  height: 20px;
-}
-
-
 </style>

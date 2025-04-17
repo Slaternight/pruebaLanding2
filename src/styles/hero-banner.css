@@ -38,7 +38,7 @@
 }
 
 .hero-marquee {
-    width: 100vw; /* Ancho completo del viewport */
+    width: 100%;
     overflow: hidden;
     position: relative;
     background-color: #ffffff; /* o el fondo que estés usando */
