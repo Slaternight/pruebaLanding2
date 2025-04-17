@@ -2,7 +2,7 @@
   <h2>{{ settings['featured-products'].settings.heading }}</h2>
   <div class="product-list">
     {% for product in products %}
-      <div class="product-wrapper {% if forloop.index > 1 %}hidden{% endif %}">
+      <div class="product-wrapper {% if forloop.index > 4 %}hidden{% endif %}">
         {% render 'product-card', product: product %}
       </div>
     {% endfor %}
