@@ -4,7 +4,8 @@
       "type": "featured-products",
       "settings": {
         "heading": "Our Featured Products",
-        "background_color": "#ffffff"
+        "background_color": "#ffffff",
+        "button_text": "View All"
       }
     },
     "header": {

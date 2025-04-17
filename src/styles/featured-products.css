@@ -82,7 +82,7 @@
 .product-wrapper.reveal {
   opacity: 0;
   transform: translateY(20px) scale(0.95);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition: opacity 0.9s ease, transform 0.9s ease;
 }
 
 .product-wrapper.reveal.visible {
