@@ -51,6 +51,14 @@
         "background_image": "hero_banner_img.avif"
       }
     },
+    "product-card": {
+      "type": "product-card",
+      "settings": {
+        "logo_image": "logo.svg",
+        "logo_alt": "Shuffle Store",
+        "logo_link": "https://gradiweb.com"
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {

@@ -1,7 +1,13 @@
-.product-grid {
+.product-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  
+}
+
+.product-wrapper{
+  display: flex;
+  justify-content: center;
 }
 
 .product-card {
@@ -12,12 +18,11 @@
   display: none;
 }
 
-.view-all-btn {
+.toggle-btn {
   display: block;
   margin: 2rem auto 0;
   padding: 0.75rem 2rem;
   font-weight: bold;
-  background-color: #8c52ff;
   color: white;
   border: none;
   border-radius: 8px;
@@ -32,10 +37,55 @@
 .toggle-btn {
   margin-top: 20px;
   padding: 12px 24px;
-  background-color: #6c4af2;
+  background-color: #000000;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-wrapper.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.product-wrapper.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+@keyframes fadeInUpScale {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.product-wrapper.reveal {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.product-wrapper.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
