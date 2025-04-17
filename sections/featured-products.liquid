@@ -12,7 +12,25 @@
 
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', () => {
+    const revealCards = document.querySelectorAll('.product-wrapper');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.1
+    });
+
+    revealCards.forEach(card => {
+      card.classList.add('reveal');
+      observer.observe(card);
+    });
+
+    // Funcionalidad del botón "View All"
     const toggleBtn = document.getElementById('toggleProducts');
     let showingAll = false;
 
@@ -28,6 +46,7 @@
     });
   });
 </script>
+
 
 
 <!--<section class="featured-products">
