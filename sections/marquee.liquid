@@ -1,0 +1,11 @@
+ <!-- Marquee -->
+  <div class="hero-marquee">
+    <div class="hero-track">
+     {% for i in (1..10) %}
+   {% for text in hero.marquee_text %}
+        <span>{{ text }}</span>
+      {% endfor %}
+{% endfor %}
+
+    </div>
+  </div>

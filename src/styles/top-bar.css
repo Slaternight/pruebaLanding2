@@ -5,10 +5,16 @@
     height: 32px;
     display: flex;
     align-items: center;
-    color: white;
     font-weight: bold;
     font-size: 0.875rem;
+    font-family: co ;
     border-bottom: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 60;
   }
 
   .topbar-marquee {
@@ -21,12 +27,12 @@
     display: inline-block;
     white-space: nowrap;
     will-change: transform;
-    animation: topbar-marquee 20s linear infinite;
+    animation: topbar-marquee 103.3s linear infinite;
   }
 
   .topbar-track span {
     display: inline-block;
-    padding: 0 2rem;
+    padding: 0 .3rem 0rem 0rem; 
   }
 
   @keyframes topbar-marquee {
@@ -48,8 +54,37 @@
   text-align: center;
   overflow: hidden;
   position: relative;
+
+  
 }
 
 marquee {
   white-space: nowrap;
+}
+
+/* Gradient overlay en los extremos */
+.announcement-bar::before,
+.announcement-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  
+}
+
+.announcement-bar::before {
+  left: 0;
+  background: linear-gradient(to right, #6e00ff, rgba(110, 0, 255, 0));
+}
+
+.announcement-bar::after {
+  right: 0;
+  background: linear-gradient(to left, #6e00ff, rgba(110, 0, 255, 0));
+}
+
+.topbar-marquee:hover .topbar-track {
+  animation-play-state: paused;
 }

@@ -1,0 +1,122 @@
+{% assign collection = settings['latest-collection'].settings %}
+<div class="latest-collection__header">
+
+    <img src="/assets/{{ collection.symbol_left }}" alt="Decorative Icon Left" class="decorative-icon" />
+
+  <h2 class="latest-collection__title">{{ collection.title }}</h2>
+
+    <img src="/assets/{{ collection.symbol_right }}" alt="Decorative Icon Right" class="decorative-icon" />
+
+</div>
+
+<div class="latest-collection__gallery">
+  <div class="latest-collection__top">
+    <div class="latest-collection__banner" style="background-image: url(/assets/{{ collection.image_1 | image_url }})">
+      <p class="latest-collection__banner-text">KET.CLUB</p>
+    </div>
+
+    <div class="latest-collection__banner" style="background-image: url(/assets/{{ collection.image_2 | image_url }})">
+      <p class="latest-collection__banner-text">KET.CLUB</p>
+    </div>
+  </div>
+
+  <div class="latest-collection__bottom">
+    <div class="latest-collection__banner_bottom" style="background-image: url(/assets/{{ collection.image_3 | image_url }})">
+    </div>
+  </div>
+</div>
+
+
+<style>
+.latest-collection__banner {
+  position: relative;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 400px
+}
+
+@media (min-width: 768px) {
+  .latest-collection__banner {
+    background-size: 140%;
+  }
+
+  .latest-collection__banner:hover {
+    background-size: 160%;
+    cursor: pointer;
+  }
+}
+
+.latest-collection__banner_bottom {
+  position: relative;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 500px
+}
+
+@media (min-width: 768px) {
+  .latest-collection__banner_bottom {
+    background-size: 100%;
+  }
+
+}
+
+.latest-collection__banner-text {
+  position: absolute;
+  bottom: 32px;
+  left: 28px;
+  font-family: var(--font-primary, sans-serif);
+  font-size: 32px;
+  font-weight: 500;
+  line-height: normal;
+  color: white;
+}
+
+.latest-collection__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.latest-collection__title {
+  font-size: 32px;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff;
+ 
+}
+
+.decorative-icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 6px rgba(172, 133, 255, 0.8));
+}
+
+.latest-collection__gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+        max-width: 1440px;
+        margin: auto;
+        margin-top: 36px;
+                padding-left: 40px;
+        padding-right: 40px;
+}
+
+.latest-collection__top {
+  display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.latest-collection__bottom {
+  margin-top: 8px;
+}
+
+</style>

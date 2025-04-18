@@ -11,9 +11,11 @@
     "header": {
       "type": "header",
       "settings": {
-      "logo_image": "logo.svg",
+      "logo_image": "logov2.svg",
       "logo_alt": "Shuffle Store",
       "logo_link": "https://gradiweb.com",
+      "cart": "cart.svg",
+      "cart_alt": "cart",
       "crypto_span": "We Accept",
       "crypto__icons": [
         "bitcoin.svg",
@@ -60,10 +62,26 @@
         "logo_link": "https://gradiweb.com"
       }
     },
+    "latest-collection": {
+      "type": "latest-collection",
+      "settings": {
+        "symbol_right": "symbol.svg",
+        "title": "Latest Collection",
+        "symbol_left": "symbol.svg",
+        "collection_name_1": "hero",
+        "image_1": "ket_club.jpg",
+        "image_2": "shuffle_essentials.webp",
+        "image_3": "homepage_bottom_banner.avif"
+      }
+    },
     "footer": {
       "type": "footer",
       "settings": {
-        "logo_text": "MyShopify",
+        "logo_image": "s_logo.svg",
+        "logo_alt": "Shuffle Store Logo",
+        "logo_line": "|",
+        "logo_text": "STORE",
+        "payment_text": "We accept all major cards, PayPal & crypto",
         "links": [
           { "label": "Home", "url": "/" },
           { "label": "Cart", "url": "/cart" },

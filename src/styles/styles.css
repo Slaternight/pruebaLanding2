@@ -1,11 +1,15 @@
 @import './top-bar.css';
 @import './hero-banner.css';
+@import './marquee.css';
 @import './header.css';
 @import './featured-products.css';
+@import './footer.css';
 
 body {
   font-family: Arial, sans-serif;
-  background-color: rgb(24, 230, 68);
-  margin: 0;
+  background-color: rgb(23, 23, 23);
+  color: rgb(255, 255, 255);
+  margin: 132px 0 0 0;
   padding: 0;
+  background-image: url(/assets/bg.webp);
 }

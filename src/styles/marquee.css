@@ -1,0 +1,39 @@
+.hero-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* width: 100%; */
+    color: #fff;
+    /* font-size: 14px; */
+    margin-top: 51px;
+ margin-bottom: 31px;
+ line-height: 88.7px;
+}
+
+
+
+.hero-track {
+    display: inline-block;
+    white-space: nowrap;
+    will-change: transform;
+    animation: hero-marquee 160s linear infinite;
+  }
+  
+  .hero-track span {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 88px;
+    font-weight: bold;
+  }
+  
+  @keyframes hero-marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }

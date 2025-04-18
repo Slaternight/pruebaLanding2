@@ -1,13 +1,23 @@
 .header {
-    background-color: #1A1A1A;
-    padding: 1rem 2rem;
+    background-color: rgba(35,33,40,.3);
+    backdrop-filter: blur(16px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     color: white;
+    position: fixed;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+    align-items: center;
   }
   
   .header__content {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    max-width: 1440px;
+    margin: auto;
   }
   
   .header__logo {
@@ -19,30 +29,43 @@
     
   }
   
-  
+  .header__cryptoH {
+    position: relative;
+    background: linear-gradient(90deg, rgba(118, 44, 251, .6), rgba(163, 148, 239, .6), rgba(133, 111, 252, .6));
+    padding: 1px !important;
+    border-radius: 9999px;
+  }
+
+  .header__cryptoH:hover {
+    background: linear-gradient(90deg, #762cfb, #a394ef, #856ffc);
+  }
+
   .header__crypto {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    border: 2px solid #444;
-    padding: 0.5rem 2rem;
+    gap: .5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     border-radius: 2rem;
-    background-color: #2C2C2C;
+    background-color: rgb(21 21 21);
+    ;
+font-size: 12px;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
   }
   
   .header__coins img {
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
   }
   .header__coins {
     display: flex;
-   gap: 0.8rem;
+   gap:.5rem;
   }
   
   .header__actions {
     display: flex;
     align-items: center;
-    gap: 1.5rem;
   }
   
   .header__nav a {
@@ -53,10 +76,11 @@
   }
   
   .header__cart {
-    background-color: #8B3DFF;
+    background-color: rgba(118,44,251,.9);
     border: none;
-    padding: 0.5rem 0.75rem;
-    border-radius: 0.5rem;
+    border-radius: 5px;
     font-size: 1.2rem;
     cursor: pointer;
+    min-width: 60px;
+    padding: .5rem;
   }
