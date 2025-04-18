@@ -1,6 +1,8 @@
 <div class="product-card">
-  <div class="product-card__image-wrapper">
-    <img class="product-card__image" src="assets/{{ product.image | img_url: 'medium' }}" alt="{{ product.title }}">
+  <div class="product-card__image-border">
+    <div class="product-card__image-wrapper">
+      <img class="product-card__image" src="assets/{{ product.image | img_url: 'medium' }}" alt="{{ product.title }}">
+    </div>
   </div>
   <div class="product-card__info">
     <div class="namePrice">
@@ -27,12 +29,25 @@
   transition: transform 0.3s ease;
 }
 
+.product-card__image-border {
+  position: relative;
+  background: linear-gradient(90deg, rgba(118, 44, 251, 0.6), rgba(163, 148, 239, 0.6), rgba(133, 111, 252, 0.6));
+  padding: 6px;
+  border-radius: 12px;
+  transition: filter 0.3s ease;
+}
+
+.product-card__image-border:hover {
+      background: linear-gradient(90deg, #762cfb, #a394ef, #856ffc);
+}
+
 .product-card__image-wrapper {
+   position: relative;
   display: flex;
   background-color: white;
   border-radius: 12px;
   justify-content: center;
-  border: 6px solid #8c52ff;
+transition: transform 0.3s ease;
 
     width: 258px; /* Reduce el ancho visible */
   height: 330px;
@@ -47,17 +62,23 @@
   max-width: 100%;
   height: auto;
   object-fit: cover;
-
+transition: transform 0.3s ease;
     height: 100%;
   width: auto;
+      transition-duration: 1s
 }
 
-
+.product-card:hover .product-card__image {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+  
 
 .product-card__info {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
 .product-card__title {

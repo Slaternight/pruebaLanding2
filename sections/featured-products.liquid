@@ -1,6 +1,5 @@
 {% assign featured = settings['featured-products'].settings %}
 <section class="featured-products">
-  <h2>{{ featured.heading }}</h2>
   <div class="product-list">
     {% for product in products %}
       <div class="product-wrapper {% if forloop.index > 4 %}hidden{% endif %}">
@@ -14,38 +13,47 @@
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const revealCards = document.querySelectorAll('.product-wrapper');
+  const allProductWrappers = document.querySelectorAll('.product-wrapper');
+  const initialHiddenCards = Array.from(allProductWrappers).slice(4);
+  const toggleBtn = document.getElementById('toggleProducts');
+  let showingAll = false;
+  const animationDuration = 600; // Duración de la transición en milisegundos (ajusta según tu CSS)
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, {
-      threshold: 0.1
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
     });
-
-    revealCards.forEach(card => {
-      card.classList.add('reveal');
-      observer.observe(card);
-    });
-
-    // Funcionalidad del botón "View All"
-    const toggleBtn = document.getElementById('toggleProducts');
-    let showingAll = false;
-
-    toggleBtn.addEventListener('click', () => {
-      const hiddenCards = document.querySelectorAll('.product-wrapper.hidden');
-
-      hiddenCards.forEach(card => {
-        card.classList.toggle('hidden');
-      });
-
-      showingAll = !showingAll;
-      toggleBtn.textContent = showingAll ? 'View Less' : 'View All';
-    });
+  }, {
+    threshold: 0.1
   });
+
+  allProductWrappers.forEach(card => {
+    card.classList.add('reveal');
+    observer.observe(card);
+  });
+
+  toggleBtn.addEventListener('click', () => {
+    showingAll = !showingAll;
+    toggleBtn.textContent = showingAll ? 'View Less' : 'View All';
+
+    if (showingAll) {
+      initialHiddenCards.forEach(card => {
+        card.classList.remove('hidden');
+        observer.observe(card);
+      });
+    } else {
+      initialHiddenCards.forEach(card => {
+        card.classList.remove('visible'); // Removemos 'visible' para iniciar la transición de salida
+        // Añadimos un pequeño retraso para que la transición de opacidad/transformación se note
+        setTimeout(() => {
+          card.classList.add('hidden');
+        }, animationDuration); // Espera la duración de la animación antes de ocultar completamente
+      });
+    }
+  });
+});
 </script>
 
 
