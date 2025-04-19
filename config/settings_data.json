@@ -5,7 +5,7 @@
       "settings": {
         "heading": "Our Featured Products",
         "background_color": "#ffffff",
-        "button_text": "View All"
+        "button_text": "VIEW ALL"
       }
     },
     "header": {
@@ -25,16 +25,17 @@
         "usdc.svg"
       ],
       "nav_links": [
-        { "label": "All Products", "url": "/collections/all" },
-        { "label": "Collections", "url": "/collections" }
-      ],
-      "cart_enabled": true
+        { "label": "All Products", "url": "#all-products" },
+        { "label": "Collections", "url": "#collections" }
+      ]
       }
     },
     "top-bar": {
       "type": "top-bar",
       "settings": {
-      "announcement_text": "💎 FREE SHIPPING FOR ORDERS OVER $100",
+      "announcement_symbol": "little_symbol.svg",
+      "announcement_alt-symbol": "little_symbol",
+      "announcement_text": "FREE SHIPPING FOR ORDERS OVER $100",
       "background_color": "#6e28d9",
       "text_color": "#ffffff"
       }
@@ -43,14 +44,9 @@
       "type": "hero-banner",
       "settings": {
         "button_text": "VIEW THE COLLECTION",
-        "button_link": "/collections/all",
-        "marquee_text": [
-                          "⭐ SHUFFLE ESSENTIALS",
-                          "SHUFFLE ESSENTIALS",
-                          "NUEVA COLECCIÓN",
-                          "ENVÍO GRATIS",
-                          "SÓLO POR TIEMPO LIMITADO"
-                        ],
+        "button_link": "#collections",
+        "marquee_icon": "symbol.svg",
+        "marquee_text": "SHUFFLE ESSENTIALS",
         "background_image": "hero_banner_img.avif"
       }
     },
@@ -65,10 +61,11 @@
     "latest-collection": {
       "type": "latest-collection",
       "settings": {
-        "symbol_right": "symbol.svg",
+        "symbol_right": "symbol_collection.svg",
         "title": "Latest Collection",
-        "symbol_left": "symbol.svg",
-        "collection_name_1": "hero",
+        "symbol_left": "symbol_collection.svg",
+        "collection_name_1": "KET.CLUB",
+        "collection_name_2": "Shuffle Essentials",
         "image_1": "ket_club.jpg",
         "image_2": "shuffle_essentials.webp",
         "image_3": "homepage_bottom_banner.avif"
@@ -81,15 +78,22 @@
         "logo_alt": "Shuffle Store Logo",
         "logo_line": "|",
         "logo_text": "STORE",
+        "copyright_text": "© 2024, Shuffle.store Operated by <br> Studio Plaid. Need help?<br>Email support@shuffle.store",
         "payment_text": "We accept all major cards, PayPal & crypto",
+        "newsletter_text": "Subscribe and receive drop notifications",
         "links": [
-          { "label": "Home", "url": "/" },
-          { "label": "Cart", "url": "/cart" },
-          { "label": "All Products", "url": "/collections/all" },
-          { "label": "Collections", "url": "/collections" },
-          { "label": "Refund Policy", "url": "/refund-policy" },
-          { "label": "Privacy Policy", "url": "/privacy-policy" },
-          { "label": "Terms of Service", "url": "/terms-of-service" }
+          { "label": "Home"},
+          { "label": "Cart" },
+          { "label": "All Products"},
+          { "label": "Collections"},
+          { "label": "Refund Policy"},
+          { "label": "Privacy Policy" },
+          { "label": "Terms of Service" }
+        ],
+        "socials": [
+          { "label": "Facebook" },
+          { "label": "X (Twitter)" },
+          { "label": "Instagram" }
         ]
       }
     }

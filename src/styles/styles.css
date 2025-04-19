@@ -3,13 +3,101 @@
 @import './marquee.css';
 @import './header.css';
 @import './featured-products.css';
+@import './product-card.css';
+@import './latest-collection.css';
 @import './footer.css';
+@import './responsive.css';
+
+@font-face {
+  font-family: 'Aeonik';
+  src: url('/assets/fonts/AeonikTRIAL-Regular.otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Countach';
+  src: url('/assets/fonts/Countach-Bold-TRIAL-BF63c5f2076e572.otf');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: a;
   background-color: rgb(23, 23, 23);
   color: rgb(255, 255, 255);
   margin: 132px 0 0 0;
   padding: 0;
   background-image: url(/assets/bg.webp);
+}
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  ::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background-color: #ffffff;}
+}
+
+p::selection{
+  background: #ec4899;
+ 
+}
+
+p{
+  font-family: 'Aeonik';
+  font-weight: normal;
+}
+
+a{
+  font-family: 'Aeonik';
+  font-weight: normal;
+}
+
+h3{
+  font-family: 'Aeonik';
+  font-weight: 400;
+}
+
+input{
+  font-family: 'Aeonik';
+  font-weight: 400;
+}
+
+button{
+  font-family: 'Countach';
+  font-weight: 400;
+}
+
+.hero-marquee__item{
+  font-family: 'Countach';
+  font-weight: 500;
+}
+
+span{
+  font-family: 'Aeonik';
+  font-weight: 500;
+}
+
+span::selection{
+  background: #ec4899;
+}
+
+h1::selection{
+  background: #ec4899;
+}
+input::selection{
+  background: #ec4899;
+}
+
+img::selection{
+  background: #ec4899;
+}
+
+a::selection{
+  background: #ec4899;
 }

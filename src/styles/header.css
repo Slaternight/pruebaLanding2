@@ -1,86 +1,115 @@
 .header {
-    background-color: rgba(35,33,40,.3);
-    backdrop-filter: blur(16px);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    color: white;
-    position: fixed;
+  background-color: #2321284d;
+  backdrop-filter: blur(16px);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  position: fixed;
   top: 32px;
   left: 0;
   width: 100%;
   z-index: 50;
-    align-items: center;
-  }
-  
-  .header__content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1440px;
-    margin: auto;
-  }
-  
-  .header__logo {
-    display: flex;
-    align-items: center;
-    width: 20%;
-    height: auto;
-    display: block;
-    
-  }
-  
-  .header__cryptoH {
-    position: relative;
-    background: linear-gradient(90deg, rgba(118, 44, 251, .6), rgba(163, 148, 239, .6), rgba(133, 111, 252, .6));
-    padding: 1px !important;
-    border-radius: 9999px;
-  }
+}
 
-  .header__cryptoH:hover {
-    background: linear-gradient(90deg, #762cfb, #a394ef, #856ffc);
-  }
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: auto;
+}
 
-  .header__crypto {
-    display: flex;
-    align-items: center;
-    gap: .5rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 2rem;
-    background-color: rgb(21 21 21);
-    ;
-font-size: 12px;
-    padding-top: .5rem;
-    padding-bottom: .5rem;
-  }
-  
-  .header__coins img {
-    width: 26px;
-    height: 26px;
-  }
-  .header__coins {
-    display: flex;
-   gap:.5rem;
-  }
-  
-  .header__actions {
-    display: flex;
-    align-items: center;
-  }
-  
-  .header__nav a {
-    color: white;
-    margin-right: 1rem;
-    font-weight: bold;
-    text-decoration: none;
-  }
-  
-  .header__cart {
-    background-color: rgba(118,44,251,.9);
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    min-width: 60px;
-    padding: .5rem;
-  }
+.header__logo {
+  display: flex;
+  align-items: center;
+  width: 20%;
+  height: auto;
+}
+
+.header__logo-link {
+  display: block;
+}
+
+.header__logo-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.header__crypto-wrapper {
+  position: relative;
+  background: linear-gradient(90deg, rgba(118, 44, 251, .6), rgba(163, 148, 239, .6), rgba(133, 111, 252, .6));
+  padding: 1px !important;
+  border-radius: 9999px;
+}
+
+.header__crypto-wrapper:hover {
+  background: linear-gradient(90deg, #762cfb, #a394ef, #856ffc);
+}
+
+.header__crypto {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border-radius: 2rem;
+  background-color: rgb(21 21 21);
+  font-size: 12px;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+
+.header__crypto-icons {
+  display: flex;
+  gap: .5rem;
+}
+
+.header__crypto-icon {
+  width: 26px;
+  height: 26px;
+}
+
+.header__actions {
+  display: flex;
+  align-items: center;
+}
+
+.header__navigation a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.header__cart-button {
+  display: flex;
+  justify-content: center;
+  background-color: rgba(118, 44, 251, .9);
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  min-width: 60px;
+  padding: .5rem;
+}
+
+.header__cart-icon {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.header__menu-button {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.header__menu-button span {
+  width: 22px;
+  height: 2px;
+  background-color: white;
+  display: block;
+}

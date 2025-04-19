@@ -1,9 +1,17 @@
-<section class="announcement-bar">
-  <div class="topbar-marquee">
-    <div class="topbar-track">
-      {% for i in (1..20) %}
-        <span>{{ settings['top-bar'].settings.announcement_text }}</span>
+{% assign announcement_text = settings['top-bar'].settings.announcement_text %}
+{% assign announcement_icon = settings['top-bar'].settings.announcement_symbol | asset_url %}
+{% assign announcement_alt = settings['top-bar'].settings.announcement_alt-symbol | asset_url %}
+
+<section class="topbar">
+  <div class="topbar__marquee">
+    <div class="topbar__track">
+      {% for i in (1..30) %}
+        <span class="topbar__item">
+          <img src="/assets/{{ announcement_icon }}" alt="{{ announcement_alt }}" class="topbar__icon">
+          {{ announcement_text }}
+        </span>
       {% endfor %}
     </div>
   </div>
 </section>
+

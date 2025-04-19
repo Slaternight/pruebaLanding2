@@ -1,0 +1,79 @@
+@import 'abstracts/variables';
+@import 'base/fonts';
+@import 'base/responsive';
+@import 'components/topbar';
+@import 'components/header';
+@import 'components/hero-banner';
+@import 'components/marquee';
+@import 'components/featured-products';
+@import 'components/product-card';
+@import 'components/latest-collection';
+@import 'components/footer';
+
+body {
+    background-color: $color-background;
+    color: $color-text;
+    margin: 132px 0 0 0;
+    padding: 0;
+    background-image: url(/assets/bg.webp);
+  }
+  
+  html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+  
+    &::-webkit-scrollbar {
+      width: 3px;
+      height: 3px;
+    }
+  
+    &::-webkit-scrollbar-thumb {
+      border-radius: 8px;
+      background-color: $color-text;
+    }
+  }
+  
+  p::selection,
+  span::selection,
+  h1::selection,
+  input::selection,
+  img::selection,
+  a::selection {
+    background: $color-background-selection;
+    color: $color-text-selection;
+  }
+  
+  p {
+    font-family: $font-main;
+    font-weight: normal;
+  }
+  
+  a {
+    font-family: $font-main;
+    font-weight: normal;
+  }
+  
+  h3 {
+    font-family: $font-main;
+    font-weight: 400;
+  }
+  
+  input {
+    font-family: $font-main;
+    font-weight: 400;
+  }
+  
+  button {
+    font-family: $font-secondary;
+    font-weight: 400;
+  }
+  
+  .hero-marquee__item {
+    font-family: $font-secondary;
+    font-weight: 500;
+  }
+  
+  span {
+    font-family: $font-main;
+    font-weight: 500;
+  }

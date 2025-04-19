@@ -1,35 +1,38 @@
 {% assign header_settings = settings['header'].settings %}
-<header class="header backdrop-blur-lg">
-  <div class="header__content">
-    <!-- Logo -->
+<header class="header">
+
+  <div class="header__container">
+    <div class="header__menu-button">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
     <div class="header__logo">
-        <a href="{{ header_settings.logo_link }}"><img src="/assets/{{ header_settings.logo_image }}" alt="{{ header_settings.logo_alt }}" /></a>
+      <a class="header__logo-link" href="{{ header_settings.logo_link }}">
+        <img class="header__logo-image" src="/assets/{{ header_settings.logo_image }}" alt="{{ header_settings.logo_alt }}" />
+      </a>
     </div>
 
-    <!-- Payment Section -->
-     <div class="header__cryptoH">
-    <div class="header__crypto">
-      <span>{{ header_settings.crypto_span }}</span>
-      <div class="header__coins">
-         {% for icon in header_settings.crypto__icons %}
-    <img src="/assets/{{ icon }}" alt="{{ icon | split: '.' | first | capitalize }}">
-  {% endfor %}
+    <div class="header__crypto-wrapper">
+      <div class="header__crypto">
+        <span class="header__crypto-text">{{ header_settings.crypto_span }}</span>
+        <div class="header__crypto-icons">
+          {% for icon in header_settings.crypto__icons %}
+            <img class="header__crypto-icon" src="/assets/{{ icon }}" alt="{{ icon | split: '.' | first | capitalize }}">
+          {% endfor %}
+        </div>
       </div>
     </div>
-   </div>
-    <!-- Nav & Cart -->
     <div class="header__actions">
-      <nav class="header__nav">
-         {% for link in header_settings.nav_links %}
-      <a href="{{ link.url }}">{{ link.label }}</a>
-    {% endfor %}
+      <nav class="header__navigation">
+        {% for link in header_settings.nav_links %}
+          <a class="header__nav-link" href="{{ link.url }}">{{ link.label }}</a>
+        {% endfor %}
       </nav>
-       {% if header_settings.cart_enabled %}
-      <button class="header__cart">
-        <img src="/assets/{{ header_settings.cart }}" alt="{{ header_settings.cart_alt }}" />
+
+      <button class="header__cart-button">
+        <img class="header__cart-icon" src="/assets/{{ header_settings.cart }}" alt="{{ header_settings.cart_alt }}" />
       </button>
-       {% endif %}
     </div>
   </div>
 </header>
-

@@ -2,49 +2,47 @@
 
 <footer class="footer">
   <div class="footer__container">
-    
-    <!-- Columna 1: Logo + texto -->
+
     <div class="footer__column">
-     <div class="logoFooter">
-      <img src="/assets/{{ footer_settings.logo_image }}" alt="{{ footer_settings.logo_alt }}" class="footer__logo" />
-      <p class="lineFooter">{{ footer_settings.logo_line }}</p>
-      <p class="textFooter">{{ footer_settings.logo_text }}</p>
+      <div class="footer__logo-area">
+        <img src="/assets/{{ footer_settings.logo_image }}" alt="{{ footer_settings.logo_alt }}" class="footer__logo-image" />
+        <p class="footer__logo-line">{{ footer_settings.logo_line }}</p>
+        <p class="footer__logo-text">{{ footer_settings.logo_text }}</p>
       </div>
-      <p>© 2024, Shuffle.store Operated by <br> Studio Plaid. Need help?<br>Email support@shuffle.store</p>
+      <p class="footer__copyright">{{ footer_settings.copyright_text }}</p>
     </div>
 
-    <!-- Columna 2: Navegación + Políticas + Métodos de pago -->
     <div class="footer__column">
-      <div class="footer__nav">
-        <span class="active">HOME</span>
-        <span>CART</span>
-        <span>ALL PRODUCTS</span>
-        <span>COLLECTIONS</span>
-      </div>
+      <nav class="footer__navigation">
+        {% for link in footer_settings.links limit: 4 %}
+          <span class="footer__nav-item{% if forloop.first %} footer__nav-item--active{% endif %}">{{ link.label | upcase }}</span>
+        {% endfor %}
+      </nav>
       <div class="footer__policies">
-        <span>REFUND POLICY</span>
-        <span>PRIVACY POLICY</span>
-        <span>TERMS OF SERVICE</span>
+        {% for link in footer_settings.links offset: 4 %}
+          <span class="footer__policy-item">{{ link.label | upcase }}</span>
+        {% endfor %}
       </div>
-      <div class="footer__payments">
-      <p class="footer__payments-text">{{ footer_settings.payment_text }}</p>
-       {% for icon in header_settings.crypto__icons %}
-    <img src="/assets/{{ icon }}" alt="{{ icon | split: '.' | first | capitalize }}">
-  {% endfor %}
+      <div class="footer__payment-methods">
+        <p class="footer__payment-text">{{ footer_settings.payment_text }}</p>
+        <div class="footer__payment-icons">
+          {% for icon in header_settings.crypto__icons %}
+            <img src="/assets/{{ icon }}" alt="{{ icon | split: '.' | first | capitalize }}" class="footer__payment-icon">
+          {% endfor %}
+        </div>
       </div>
     </div>
 
-    <!-- Columna 3: Newsletter + redes -->
     <div class="footer__column">
-      <p class="footer__newsletter-title">Subscribe and receive drop notifications</p>
-      <form class="footer__newsletter">
-        <input type="email" placeholder="Enter Email" />
-        <button type="submit">→</button>
+      <p class="footer__newsletter-title">{{ footer_settings.newsletter_text }}</p>
+      <form class="footer__newsletter-form">
+        <input type="email" placeholder="Enter Email" class="footer__newsletter-input" />
+        <button type="submit" class="footer__newsletter-button">→</button>
       </form>
-      <div class="footer__socials">
-        <span>FACEBOOK</span>
-        <span>X(TWITTER)</span>
-        <span>INSTAGRAM</span>
+      <div class="footer__social-links">
+        {% for social in footer_settings.socials %}
+          <span class="footer__social-item">{{ social.label | upcase }}</span>
+        {% endfor %}
       </div>
     </div>
 

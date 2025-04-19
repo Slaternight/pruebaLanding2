@@ -15,7 +15,6 @@
   margin: auto;
   margin-top: 30px;
   margin-bottom: 23px;
-
 }
 
 .footer__column {
@@ -26,12 +25,28 @@
   gap: 16px;
 }
 
-.footer__logo {
+.footer__logo-image {
   width: 60px;
   margin-bottom: 10px;
 }
 
-.footer__nav {
+.footer__logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__logo-line {
+  text-align: center;
+  color: rgb(118 44 251);
+}
+
+.footer__logo-text {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.footer__navigation {
   display: flex;
   justify-content: center;
   gap: 30px;
@@ -40,10 +55,17 @@
   font-size: 24px;
 }
 
+.footer__nav-item--active {
+  color: white;
+  font-weight: bold;
+  border-bottom: 2px solid #7c3aed;
+  width: fit-content;
+}
+
 .footer__policies {
   display: flex;
   justify-content: center;
-align-items: center;
+  align-items: center;
   margin-bottom: 20px;
   margin-top: 42px;
   font-size: 12px;
@@ -51,40 +73,25 @@ align-items: center;
   gap: 48px;
 }
 
-
-.footer__socials {
-  display: flex;
-  gap: 6px;
-  font-size: 12px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  display: grid;
-  margin-top: 56px;
-}
-
-
-.footer__nav .active {
-  color: white;
-  font-weight: bold;
-  border-bottom: 2px solid #7c3aed;
-  width: fit-content;
-}
-
-.footer__payments-text {
-  display: flex;
-  margin-top: 10px;
-  font-size: 0.8rem;
-  color: #d1d5db;
-  justify-content: center;
-}
-
-.footer__payments {
+.footer__payment-methods {
   display: flex;
   gap: .5rem;
   justify-content: center;
   margin-top: 60px;
+  align-items: center;
 }
 
-.footer__payments img {
+.footer__payment-text {
+  font-size: 0.8rem;
+  color: #d1d5db;
+}
+
+.footer__payment-icons {
+  display: flex;
+  gap: .5rem;
+}
+
+.footer__payment-icon {
   width: 20px;
   margin-right: 6px;
 }
@@ -94,7 +101,7 @@ align-items: center;
   margin: 0px;
 }
 
-.footer__newsletter {
+.footer__newsletter-form {
   display: flex;
   background-color: #1f1f1f;
   border-radius: 8px;
@@ -102,7 +109,7 @@ align-items: center;
   max-width: 250px;
 }
 
-.footer__newsletter input {
+.footer__newsletter-input {
   background: transparent;
   border: none;
   color: white;
@@ -110,7 +117,7 @@ align-items: center;
   flex: 1;
 }
 
-.footer__newsletter button {
+.footer__newsletter-button {
   background-color: #7c3aed;
   color: white;
   border: none;
@@ -118,19 +125,15 @@ align-items: center;
   cursor: pointer;
 }
 
-.logoFooter{
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  
+.footer__social-links {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 56px;
 }
 
-.lineFooter{
-  text-align: center;
-  color: rgb(118 44 251);
-}
-
-.textFooter{
-  font-size: 34px;
-  font-weight: 700;
+.footer__copyright {
+  font-size: 0.8rem;
+  color: #d1d5db;
 }

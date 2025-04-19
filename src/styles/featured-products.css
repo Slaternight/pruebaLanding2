@@ -1,14 +1,14 @@
-.product-list {
+.featured-products__list {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
   max-width: 1440px;
   padding-left: 40px;
-        padding-right: 40px;
-        margin: auto;
+  padding-right: 40px;
+  margin: auto;
 }
 
-.product-wrapper{
+.featured-products__item {
   display: flex;
   justify-content: center;
 }
@@ -17,35 +17,27 @@
   transition: all 0.3s ease;
 }
 
-.hidden {
+.featured-products__item--hidden {
   display: none;
 }
 
-.toggle-btn {
+.featured-products__toggle-button {
   display: block;
   margin: 2rem auto 0;
-  padding: 0.75rem 2rem;
+  padding: 1rem 2rem;
+  font-size: 32px;
   font-weight: bold;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-}
-
-
-.product-wrapper.hidden {
-  display: none;
-}
-
-.toggle-btn {
   margin-top: 20px;
-  padding: 12px 24px;
-  background-color: #000000;
-  color: white;
-  border: none;
+  background-color: rgba(118, 44, 251, 0.992);
   border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
+}
+
+.featured-products__toggle-button:hover {
+  background-color: rgba(118,44,251,.9);
 }
 
 @keyframes fadeInUp {
@@ -59,19 +51,18 @@
   }
 }
 
-.product-wrapper.reveal {
+.featured-products__item--reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.product-wrapper.reveal.visible {
+.featured-products__item--reveal.featured-products__item--visible {
   opacity: 1;
   transform: translateY(0);
   transition-duration: 1s;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
-
 
 @keyframes fadeInUpScale {
   from {
@@ -84,15 +75,19 @@
   }
 }
 
-.product-wrapper.reveal {
+.featured-products__item--reveal {
   opacity: 0;
   transform: translateY(20px) scale(0.95);
   transition: opacity 0.9s ease, transform 0.9s ease;
   transition-duration: 1s;
-  transition-timing-function: cubic-bezier(.4,0,.2,1);
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
 }
 
-.product-wrapper.reveal.visible {
+.featured-products__item--reveal.featured-products__item--visible {
   opacity: 1;
   transform: translateY(0) scale(1);
+}
+
+.section-spacing-product {
+  scroll-margin-top: 120px;
 }
