@@ -1,55 +1,77 @@
-.announcement-bar {
-    background-color: #6e00ff;
-    overflow: hidden;
-    white-space: nowrap;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    color: white;
-    font-weight: bold;
-    font-size: 0.875rem;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
+.topbar {
+  background-color: #762cfb;
+  overflow: hidden;
+  white-space: nowrap;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 60;
+}
 
-  .topbar-marquee {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-  }
-
-  .topbar-track {
-    display: inline-block;
-    white-space: nowrap;
-    will-change: transform;
-    animation: topbar-marquee 20s linear infinite;
-  }
-
-  .topbar-track span {
-    display: inline-block;
-    padding: 0 2rem;
-  }
-
-  @keyframes topbar-marquee {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-50%);
-    }
-  }
-
-
-  .top-bar {
-  background-color: #8e2de2; /* morado vibrante */
-  color: white;
-  font-weight: bold;
-  font-size: 14px;
-  padding: 6px 0;
-  text-align: center;
+.topbar__marquee {
+  width: 100%;
   overflow: hidden;
   position: relative;
 }
 
-marquee {
+.topbar__track {
+  display: flex;
+  align-items: center;
   white-space: nowrap;
+  will-change: transform;
+  animation: topbar-marquee 50s linear infinite;
+}
+
+.topbar__item {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.3rem 0 0;
+  font-family: 'Aeonik';
+  font-weight: 900;
+  font-size: 12px;
+}
+
+.topbar__icon {
+  width: 16px;
+  height: auto;
+  margin-right: 6px;
+}
+
+.topbar:hover .topbar__track {
+  animation-play-state: paused;
+}
+
+.topbar::before,
+.topbar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.topbar::before {
+  left: 0;
+  background: linear-gradient(to right, #6e00ff, #6e00ff00);
+}
+
+.topbar::after {
+  right: 0;
+  background: linear-gradient(to left, #6e00ff, #6e00ff00);
+}
+
+@keyframes topbar-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

@@ -1,0 +1,139 @@
+.footer {
+  color: white;
+  font-family: sans-serif;
+  padding-left: 40px;
+  padding-right: 40px;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1440px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 23px;
+}
+
+.footer__column {
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer__logo-image {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.footer__logo-area {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer__logo-line {
+  text-align: center;
+  color: rgb(118 44 251);
+}
+
+.footer__logo-text {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.footer__navigation {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.footer__nav-item--active {
+  color: white;
+  font-weight: bold;
+  border-bottom: 2px solid #7c3aed;
+  width: fit-content;
+}
+
+.footer__policies {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-top: 42px;
+  font-size: 12px;
+  color: #d1d5db;
+  gap: 48px;
+}
+
+.footer__payment-methods {
+  display: flex;
+  gap: .5rem;
+  justify-content: center;
+  margin-top: 60px;
+  align-items: center;
+}
+
+.footer__payment-text {
+  font-size: 0.8rem;
+  color: #d1d5db;
+}
+
+.footer__payment-icons {
+  display: flex;
+  gap: .5rem;
+}
+
+.footer__payment-icon {
+  width: 20px;
+  margin-right: 6px;
+}
+
+.footer__newsletter-title {
+  font-size: 14px;
+  margin: 0px;
+}
+
+.footer__newsletter-form {
+  display: flex;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 250px;
+}
+
+.footer__newsletter-input {
+  background: transparent;
+  border: none;
+  color: white;
+  padding: 10px;
+  flex: 1;
+}
+
+.footer__newsletter-button {
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  padding: 0 12px;
+  cursor: pointer;
+}
+
+.footer__social-links {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 56px;
+}
+
+.footer__copyright {
+  font-size: 0.8rem;
+  color: #d1d5db;
+}

@@ -1,60 +1,55 @@
 {% assign featured = settings['featured-products'].settings %}
-<section class="featured-products">
-  <h2>{{ featured.heading }}</h2>
-  <div class="product-list">
+<section class="featured-products section-spacing-product" id="all-products">
+  <div class="featured-products__list featured-products__list--scrollable">
     {% for product in products %}
-      <div class="product-wrapper {% if forloop.index > 4 %}hidden{% endif %}">
+      <div class="featured-products__item {% if forloop.index > 4 %}featured-products__item--hidden{% endif %}">
         {% render 'product-card', product: product %}
       </div>
     {% endfor %}
   </div>
-  <button id="toggleProducts" class="toggle-btn">{{ featured.button_text }}</button>
+  <button id="toggleProducts" class="featured-products__toggle-button">{{ featured.button_text }}</button>
 </section>
-
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
-    const revealCards = document.querySelectorAll('.product-wrapper');
+    const allProductWrappers = document.querySelectorAll('.featured-products__item');
+    const initialHiddenCards = Array.from(allProductWrappers).slice(4);
+    const toggleBtn = document.getElementById('toggleProducts');
+    let showingAll = false;
+    const animationDuration = 600;
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
+          entry.target.classList.add('featured-products__item--visible');
         }
       });
     }, {
       threshold: 0.1
     });
 
-    revealCards.forEach(card => {
-      card.classList.add('reveal');
+    allProductWrappers.forEach(card => {
+      card.classList.add('featured-products__item--reveal');
       observer.observe(card);
     });
 
-    // Funcionalidad del botón "View All"
-    const toggleBtn = document.getElementById('toggleProducts');
-    let showingAll = false;
-
     toggleBtn.addEventListener('click', () => {
-      const hiddenCards = document.querySelectorAll('.product-wrapper.hidden');
-
-      hiddenCards.forEach(card => {
-        card.classList.toggle('hidden');
-      });
-
       showingAll = !showingAll;
       toggleBtn.textContent = showingAll ? 'View Less' : 'View All';
+
+      if (showingAll) {
+        initialHiddenCards.forEach(card => {
+          card.classList.remove('featured-products__item--hidden');
+          observer.observe(card);
+        });
+      } else {
+        initialHiddenCards.forEach(card => {
+          card.classList.remove('featured-products__item--visible');
+          setTimeout(() => {
+            card.classList.add('featured-products__item--hidden');
+          }, animationDuration);
+        });
+      }
     });
   });
 </script>
-
-
-
-<!--<section class="featured-products">
-  <h2>{{ settings['featured-products'].settings.heading }}</h2>
-  <div class="product-list">
-    {% for product in products %}
-      {% render 'product-card', product: product %}
-    {% endfor %}
-  </div>
-</section>-->

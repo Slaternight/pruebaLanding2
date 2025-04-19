@@ -1,0 +1,26 @@
+{% assign collection = settings['latest-collection'].settings %}
+
+<div class="latest-collection section-spacing" id="collections">
+  <div class="latest-collection__header">
+    <img src="/assets/{{ collection.symbol_left }}" alt="Decorative Icon Left" class="latest-collection__icon" />
+    <h2 class="latest-collection__title">{{ collection.title }}</h2>
+    <img src="/assets/{{ collection.symbol_right }}" alt="Decorative Icon Right" class="latest-collection__icon" />
+  </div>
+
+  <div class="latest-collection__gallery">
+    <div class="latest-collection__top-banners">
+      <div class="latest-collection__banner" style="background-image: url(/assets/{{ collection.image_1 | image_url }})">
+        <p class="latest-collection__banner-text">{{ collection.collection_name_1 }}</p>
+      </div>
+
+      <div class="latest-collection__banner" style="background-image: url(/assets/{{ collection.image_2 | image_url }})">
+        <p class="latest-collection__banner-text">{{ collection.collection_name_2 }}</p>
+      </div>
+    </div>
+
+    <div class="latest-collection__bottom-banners">
+      <div class="latest-collection__banner latest-collection__banner--bottom" style="background-image: url(/assets/{{ collection.image_3 | image_url }})">
+      </div>
+    </div>
+  </div>
+</div>

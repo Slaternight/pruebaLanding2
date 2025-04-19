@@ -1,0 +1,50 @@
+{% assign footer_settings= settings['footer'].settings %}
+
+<footer class="footer">
+  <div class="footer__container">
+
+    <div class="footer__column">
+      <div class="footer__logo-area">
+        <img src="/assets/{{ footer_settings.logo_image }}" alt="{{ footer_settings.logo_alt }}" class="footer__logo-image" />
+        <p class="footer__logo-line">{{ footer_settings.logo_line }}</p>
+        <p class="footer__logo-text">{{ footer_settings.logo_text }}</p>
+      </div>
+      <p class="footer__copyright">{{ footer_settings.copyright_text }}</p>
+    </div>
+
+    <div class="footer__column">
+      <nav class="footer__navigation">
+        {% for link in footer_settings.links limit: 4 %}
+          <span class="footer__nav-item{% if forloop.first %} footer__nav-item--active{% endif %}">{{ link.label | upcase }}</span>
+        {% endfor %}
+      </nav>
+      <div class="footer__policies">
+        {% for link in footer_settings.links offset: 4 %}
+          <span class="footer__policy-item">{{ link.label | upcase }}</span>
+        {% endfor %}
+      </div>
+      <div class="footer__payment-methods">
+        <p class="footer__payment-text">{{ footer_settings.payment_text }}</p>
+        <div class="footer__payment-icons">
+          {% for icon in header_settings.crypto__icons %}
+            <img src="/assets/{{ icon }}" alt="{{ icon | split: '.' | first | capitalize }}" class="footer__payment-icon">
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__column">
+      <p class="footer__newsletter-title">{{ footer_settings.newsletter_text }}</p>
+      <form class="footer__newsletter-form">
+        <input type="email" placeholder="Enter Email" class="footer__newsletter-input" />
+        <button type="submit" class="footer__newsletter-button">→</button>
+      </form>
+      <div class="footer__social-links">
+        {% for social in footer_settings.socials %}
+          <span class="footer__social-item">{{ social.label | upcase }}</span>
+        {% endfor %}
+      </div>
+    </div>
+
+  </div>
+</footer>

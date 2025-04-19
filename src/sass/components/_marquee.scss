@@ -1,0 +1,59 @@
+.hero-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    color: $color-text;
+    margin: 51px auto 31px auto;
+    max-width: 1920px;
+  
+    &__track {
+      display: inline-block;
+      white-space: nowrap;
+      will-change: transform;
+      animation: hero-marquee-animation 149.70625s linear infinite;
+    }
+  
+    &__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 0.5rem;
+      font-size: 88px;
+      font-weight: bold;
+    }
+  
+    &__icon {
+      width: 76px;
+      height: 77px;
+      display: inline-block;
+    }
+  
+    &__overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 120px;
+      pointer-events: none;
+      z-index: 1;
+  
+      &--left {
+        left: 0;
+        background: linear-gradient(to right, #232128, transparent);
+      }
+  
+      &--right {
+        right: 0;
+        background: linear-gradient(to left, #232128, transparent);
+      }
+    }
+  }
+  
+  @keyframes hero-marquee-animation {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  

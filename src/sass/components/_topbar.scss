@@ -1,0 +1,77 @@
+.topbar {
+    background-color: $color-primary;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 60;
+  
+    &__marquee {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+  
+    &__track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      will-change: transform;
+      animation: topbar-marquee 50s linear infinite;
+    }
+  
+    &__item {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 0.3rem 0 0;
+      font-family: $font-main;
+      font-weight: 900;
+      font-size: 12px;
+    }
+  
+    &__icon {
+      width: 16px;
+      height: auto;
+      margin-right: 6px;
+    }
+  
+    &:hover &__track {
+      animation-play-state: paused;
+    }
+  
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 60px;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+  
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, $color-linear-gradient-topbar, $color-linear-second-gradient-topbar);
+    }
+  
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, $color-linear-gradient-topbar, $color-linear-second-gradient-topbar);
+    }
+  }
+  
+  @keyframes topbar-marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  

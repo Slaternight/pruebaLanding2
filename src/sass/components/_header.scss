@@ -1,0 +1,123 @@
+.header {
+    background-color: #2321284d;
+    backdrop-filter: blur(16px);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    position: fixed;
+    top: 32px;
+    left: 0;
+    width: 100%;
+    z-index: 50;
+  
+    &__container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: $max-width;
+      margin: auto;
+    }
+  
+    &__logo {
+      display: flex;
+      align-items: center;
+      width: 20%;
+      height: auto;
+  
+      &-link {
+        display: block;
+      }
+  
+      &-image {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+    }
+  
+    &__crypto-wrapper {
+      position: relative;
+      background: linear-gradient(
+        90deg,
+        rgba(118, 44, 251, 0.6),
+        rgba(163, 148, 239, 0.6),
+        rgba(133, 111, 252, 0.6)
+      );
+      padding: 1px !important;
+      border-radius: 9999px;
+  
+      &:hover {
+        background: linear-gradient(90deg, $color-primary, $color-primary-light, $color-primary-lighter);
+      }
+    }
+  
+    &__crypto {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-radius: 2rem;
+      background-color: rgb(21 21 21);
+      font-size: 12px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+  
+      &-icons {
+        display: flex;
+        gap: 0.5rem;
+      }
+  
+      &-icon {
+        width: 26px;
+        height: 26px;
+      }
+    }
+  
+    &__actions {
+      display: flex;
+      align-items: center;
+    }
+  
+    &__navigation {
+      a {
+        color: white;
+        margin-right: 1rem;
+        text-decoration: none;
+      }
+    }
+  
+    &__cart-button {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(118, 44, 251, 0.9);
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      min-width: 60px;
+      padding: 0.5rem;
+    }
+  
+    &__cart-icon {
+      display: block;
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  
+    &__menu-button {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+  
+      span {
+        width: 22px;
+        height: 2px;
+        background-color: white;
+        display: block;
+      }
+    }
+  }
+  

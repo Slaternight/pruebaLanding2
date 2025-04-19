@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="theme.css">
   <title>Shopify Simulator | Gradiweb</title>
 </head>
 <body>
   {% include 'top-bar.liquid' %}
   {% include 'header.liquid' %}
   {% include 'hero-banner.liquid' %}
+  {% include 'marquee.liquid' %}
   {% include 'featured-products.liquid' %}
+  {% include 'latest-collection.liquid' %}
+  {% include 'footer.liquid' %}
   <script src="/main.js"></script>
+  <script src="/public/main.js" defer></script>
 </body>
 </html>
